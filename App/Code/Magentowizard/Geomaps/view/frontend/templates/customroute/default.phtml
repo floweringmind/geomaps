@@ -1,0 +1,17 @@
+<?php
+$helper = $this->helper('Magentowizard\Geomaps\Helper\Data');
+$regionName  =  $helper->getRouteData()->getRegionName();
+$cityContent  =  $helper->getRouteData()->getCityContent();
+$header = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('geo_cities_top_heading')->toHtml();
+$header = str_replace("{{region_name}}", $regionName, $header);
+?>
+<div class="content">
+<?php echo $header; ?>
+<?php echo $this->getLayout()
+->createBlock('Magento\Cms\Block\Block')
+->setBlockId('geo_map_middle')
+->toHtml(); ?>
+<p><?php echo $cityContent; ?></p>
+</div>
+
+

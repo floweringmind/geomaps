@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magentowizard_Geomaps::manager" title="Geo Maps" module="Magentowizard_Geomaps" sortOrder="10" resource="Magentowizard_Geomaps::manager" />
+        <add id="Magentowizard_Geomaps::add_row" title="Manage Pages" module="Magentowizard_Geomaps" sortOrder="20" parent="Magentowizard_Geomaps::manager" action="grid/grid" resource="Magentowizard_Geomaps::add_row"/>
+    </menu>
+</config>
