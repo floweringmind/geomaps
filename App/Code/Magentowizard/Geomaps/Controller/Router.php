@@ -9,7 +9,6 @@ use Magento\Framework\DataObject;
 use Magento\Framework\Event\ManagerInterface as EventManagerInterface;
 use Magentowizard\Geomaps\Helper\Data as CustomRouteHelper;
 
-
 class Router implements RouterInterface
 {
     /**

@@ -42,15 +42,13 @@ class Data extends AbstractHelper
         StoreManagerInterface $storeManager,
         RequestInterface $request,
         ScopeConfigInterface $scopeConfig
-    )
-    {
+    ) {
         $this->logger = $logger;
         $this->storeManager = $storeManager;
         $this->request = $request;
         $this->scopeConfig = $scopeConfig;
         $this->gridFactory = $gridFactory;
         parent::__construct($context);
-
     }
 
     /**
@@ -60,12 +58,11 @@ class Data extends AbstractHelper
      */
     public function getModuleRoute($identifier)
     {
-
         $route = false;
         $data = $this->gridFactory->create()->getCollection();
 
-        foreach ($data as $geomap ){
-            if ($identifier == $geomap->getUrlKey()){
+        foreach ($data as $geomap) {
+            if ($identifier == $geomap->getUrlKey()) {
                 $route = true;
                 break;
             }
@@ -84,8 +81,8 @@ class Data extends AbstractHelper
         $identifier = trim($this->request->getPathInfo(), '/');
         $data = $this->gridFactory->create()->getCollection();
 
-        foreach ($data as $geomap ){
-            if ($identifier == $geomap->getUrlKey()){
+        foreach ($data as $geomap) {
+            if ($identifier == $geomap->getUrlKey()) {
                 $routeData =  $geomap;
                 break;
             }
@@ -102,5 +99,4 @@ class Data extends AbstractHelper
     {
         return $this->storeManager->getStore()->getName();
     }
-
 }

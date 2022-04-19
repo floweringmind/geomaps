@@ -7,7 +7,7 @@ class Save extends \Magento\Backend\App\Action
     /**
      * @var \Magentowizard\Geomaps\Model\GridFactory
      */
-    var $gridFactory;
+    private $gridFactory;
 
     /**
      * @param \Magento\Backend\App\Action\Context $context
@@ -36,10 +36,10 @@ class Save extends \Magento\Backend\App\Action
         }
         try {
             $rowData = $this->gridFactory->create();
-            if (isset($data['store_select'])){
+            if (isset($data['store_select'])) {
                 $stores = $data['store_select'];
                 $oldStores = $data['stores'];
-                if ($stores != ""){
+                if ($stores != "") {
                     $data['stores'] = $this->getStoreNames($stores);
                     $data['stores_ids'] = $this->getStoreNames($stores);
                 }
@@ -65,8 +65,8 @@ class Save extends \Magento\Backend\App\Action
         $options = "";
         $storeManagerDataList = $this->_storeManager->getStores();
         foreach ($storeManagerDataList as $key => $value) {
-            foreach($stores as $store){
-                if ($store == $key){
+            foreach ($stores as $store) {
+                if ($store == $key) {
                     $options .= $value['name'].", ";
                 }
             }
@@ -83,8 +83,8 @@ class Save extends \Magento\Backend\App\Action
         $options = "";
         $storeManagerDataList = $this->_storeManager->getStores();
         foreach ($storeManagerDataList as $key => $value) {
-            foreach($stores as $store){
-                if ($store == $key){
+            foreach ($stores as $store) {
+                if ($store == $key) {
                     $options .= $key.", ";
                 }
             }
@@ -101,8 +101,8 @@ class Save extends \Magento\Backend\App\Action
         $options = "";
         $storeManagerDataList = $this->_storeManager->getStores();
         foreach ($storeManagerDataList as $key => $value) {
-            foreach($stores as $store){
-                if ($store == $key){
+            foreach ($stores as $store) {
+                if ($store == $key) {
                     $options .= $key.", ";
                 }
             }
